@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Egghead Videos</title>
+    <link rel="stylesheet" href="http://cdn.foundation5.zurb.com/foundation.css">
+</head>
+
+<body>
+    <div ng-app="drinkApp">
+        <div ng-controller="AppCtrl">
+            Ctrl
+            <input type="text" ng-model="ctrlFlavor">
+
+            Dir
+            <div drink flavor="ctrlFlavor"></div>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
