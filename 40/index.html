@@ -8,12 +8,11 @@
 <body>
 
 <div ng-app="app">
-    <input type="text" ng-model="model.title">
-    <input type="text" ng-model="model.content">
 
-    <zippy title="{{model.title}}">
-        The content is: {{model.content}}
-    </zippy>
+    <div ng-controller="AppCtrl">
+        <p>{{title}}</p>
+    </div>
+
 </div>
 
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js"></script>
