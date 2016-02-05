@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body ng-app="egghead" ng-controller="AppCtrl as app">
+<body ng-app="egghead">
 
 <div ng-init="amount = 10"></div>
 
-<bank ng-nodel="amount"></bank>
+<bank ng-model="amount"></bank>
 {{amount | currency}}
 
 <script src="//cdn.jsdelivr.net/tinycolor/0.9.16/tinycolor.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
