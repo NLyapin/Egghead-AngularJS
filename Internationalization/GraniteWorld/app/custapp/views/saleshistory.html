@@ -1,0 +1,74 @@
+﻿<div class="form-horizontal">
+    <h3>Your Purchase History</h3>
+    <hr />
+    <div class="form-group" ng-show="vm.errorMessage">
+        <div class="col-md-6">
+            <span style="color: red;">{{vm.errorMessage}}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-3">
+            Who are you?:
+        </div>
+        <div class="col-md-3">
+            <select class="form-control" ng-model="vm.currentCustomer" ng-change="vm.customerChanged()">
+                <option class="form-control" ng-repeat="a in vm.customerList" value="{{a.CustomerId}}">{{a.Name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group" ng-show="vm.currentCustomerObj">
+        <div class="col-md-3">
+            Address:
+        </div>
+        <div class="col-md-3">
+            {{vm.currentCustomerObj.Address}}<br />
+            {{vm.currentCustomerObj.City}}, {{vm.currentCustomerObj.State}} {{vm.currentCustomerObj.Zipcode}}<br />
+            {{vm.currentCustomerObj.HomePhone}}<br />
+            {{vm.currentCustomerObj.CellPhone}}
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-3">
+            Start Search:
+        </div>
+        <div class="col-md-3">
+            <input type="text" ng-model="vm.searchStart" name="searchStart" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-6">
+            <span style="color: red;" ng-show="vm.dateOrderError">Start date must be before the end date</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-3">
+            End Search:
+        </div>
+        <div class="col-md-3">
+            <input type="text" ng-model="vm.searchEnd" />
+        </div>
+        <div class="col-md-1 text-right">
+            <button class="btn btn-info" ng-click="vm.findSales()">Search</button>
+        </div>
+    </div>
+    <hr />
+    <table width="800" ng-show="vm.customerSales.length > 0">
+        <tr>
+            <th>Customer Name</th>
+            <th>Product Name</th>
+            <th>Size</th>
+            <th>Weight</th>
+            <th>Sale Date</th>
+            <th>Total Cost</th>
+        </tr>
+        <tr ng-repeat="s in vm.customerSales">
+            <td>{{s.CustomerName}}</td>
+            <td>{{s.ProductName}}</td>
+            <td>{{s.Width}} x {{s.Length}}</td>
+            <td>{{s.Weight}}</td>
+            <td>{{s.SaleDate}}</td>
+            <td>{{s.SalePrice}}</td>
+        </tr>
+    </table>
+    <hr />
+</div>

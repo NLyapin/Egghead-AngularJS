@@ -1,0 +1,56 @@
+﻿@using GraniteWorld.App_LocalResources;
+<form name="loadinventory">
+    <div class="form-horizontal">
+        <h3>@GraniteResource.ReceiveInventoryHeader</h3>
+        <hr />
+        <div class="form-group">
+            <div class="col-md-4">
+                @GraniteResource.ChooseProductLoadPrefix
+            </div>
+            <div class="col-md-8">
+                <select class="form-control" ng-model="vm.currentProduct" ng-change="vm.selectionChanged()">
+                    <option class="form-control" ng-repeat="a in vm.productList" value="{{a.ProductId}}">{{a.ProductName}}</option>
+                </select>
+            </div>
+        </div>
+        <hr />
+        <h4>@GraniteResource.EnterInventoryDetailsHeader</h4>
+        <div class="form-group">
+            <div class="col-md-4">
+                @GraniteResource.WidthPrefix
+            </div>
+            <div class="col-md-8">
+                <input type="number" ng-model="vm.width" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4">
+                @GraniteResource.LengthPrefix
+            </div>
+            <div class="col-md-8">
+                <input type="number" ng-model="vm.length" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4">
+                @GraniteResource.WeightPrefix
+            </div>
+            <div class="col-md-8">
+                <input type="number" ng-model="vm.weight" name="weight" step=".1" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4">
+                @GraniteResource.DateTimeReceivedPrefix
+            </div>
+            <div class="col-md-8">
+                <input ng-model="vm.receiveDate" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9 text-right">
+                <button class="btn btn-info" ng-click="vm.addInventory()">@GraniteResource.CompleteLoadButton</button>
+            </div>
+        </div>
+    </div>
+</form>
