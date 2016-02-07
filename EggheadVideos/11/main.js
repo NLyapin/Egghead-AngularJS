@@ -1,17 +1,17 @@
-var app = angular.module("superhero",[]);
+var app = angular.module("superhero", []);
 app.directive("superman", function () {
     return {
         restrict: "A",
         link: function () {
-            alert('I am stronger!')
+            alert('I am stronger!');
         }
-    }
+    };
 });
 app.directive("flash", function () {
     return {
         restrict: "A",
         link: function () {
-            alert('I am faster!')
+            alert('I am faster!');
         }
-    }
+    };
 });

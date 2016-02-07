@@ -10,7 +10,6 @@ angular.module("demo", ["oc.lazyLoad"])
                 ]
             }).then(function () {
                 console.log($injector.get("cart"));
-            })
-
-        }
-    })
+            });
+        };
+    });
