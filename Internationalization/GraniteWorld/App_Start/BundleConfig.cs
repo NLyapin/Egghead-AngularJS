@@ -35,6 +35,18 @@ namespace GraniteWorld
                         
                         // Services
                         "~/app/empapp/services/webapi.js"));
+            
+            bundles.Add(new ScriptBundle("~/bundles/custapp").Include(
+                        "~/app/custapp/app.js",
+
+                        // Controllers
+                        "~/app/custapp/controllers/main.js",
+                        "~/app/custapp/controllers/shell.js",
+                        "~/app/custapp/controllers/loadinventory.js",
+                        
+                        // Services
+                        "~/app/custapp/services/context.js",
+                        "~/app/custapp/services/webapi.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

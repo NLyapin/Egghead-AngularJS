@@ -1025,6 +1025,9 @@
     <Content Include="Views\EmployeePortal\LoadInventory.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="App_LocalResources\GraniteResource.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="App_LocalResources\GraniteResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GraniteResource.Designer.cs</LastGenOutput>
