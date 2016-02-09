@@ -11,14 +11,14 @@
     <title>Demo2</title>
     
     <script src="../../Scripts/jquery-1.7.1.js"></script>
-    <script src="../../Scripts/jquery.signalR-2.2.0.js"></script>
-    <script src="../../signalr/hub"></script>
+    <script src="../../Scripts/jquery.signalR-1.2.0.js"></script>
+    <script src="/signalr/hubs"></script>
     
     <script type="text/javascript">
         $(function () {
             var hub = $.connection.gameHub;
-            hub.clientHeight.hello = function (message) {
-                $('#results').append('<strong>' + message + '</strong>')
+            hub.client.hello = function (message) {
+                $('#results').append('<strong>' + message + '</strong>');
             };
 
             $.connection.hub.start().done(function() {
