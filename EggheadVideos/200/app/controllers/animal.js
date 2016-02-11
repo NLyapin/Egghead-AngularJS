@@ -13,9 +13,9 @@ angular.module('app').controller('AnimalCtrl',
 
         //Animals
         this.animals = [
-            {name: 'Emperor Angel Fish', code: 'common.emperorAngelFish', img: 'http://www.reef.org/reef_files/enews/EmperorAngelfish_humann.jpg'},
-            {name: 'Sea Turtle', code: 'common.seaTurtle', img: 'http://melinabeachturtlehatchery.files.wordpress.com/2010/07/turtle4.jpg'},
-            {name: 'Manatee', code: 'common.manatee', img: 'http://i.huffpost.com/gen/1272530/thumbs/o-MANATEES-900.jpg?5'}
+            { code: 'common.emperorAngelFish', img: 'http://www.reef.org/reef_files/enews/EmperorAngelfish_humann.jpg'},
+            { code: 'common.seaTurtle', img: 'http://melinabeachturtlehatchery.files.wordpress.com/2010/07/turtle4.jpg'},
+            { code: 'common.manatee', img: 'http://i.huffpost.com/gen/1272530/thumbs/o-MANATEES-900.jpg?5'}
         ];
 
     }]);
