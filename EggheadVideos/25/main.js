@@ -3,7 +3,6 @@ var app = angular.module("app", []);
 app.directive("dumbPassword", function() {
     var validElement = angular.element("<div>{{model.input}}</div>");
 
-    //in the video, I accidentally typed "this.link". "this" in a directive is "Window". Instead, use "var link" as shown below.
     var link = function(scope) {
         scope.$watch("model.input", function(value) {
             if (value === "password") {
