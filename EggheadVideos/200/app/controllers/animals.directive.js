@@ -1,7 +1,7 @@
 angular.module('app')
-    .directive('animal', function() {
+    .directive('animal', function () {
         return {
             restrict: "E",
-            templateUrl: 'app/animals.html'
+            templateUrl: '/app/animals.html'
         };
     });
