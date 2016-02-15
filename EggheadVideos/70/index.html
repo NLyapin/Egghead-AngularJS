@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="alt-one/alt-one.js"></script>
+  <script type="text/javascript" src="alt-two/alt-two.js"></script>
+  <script type="text/javascript" src="alt-three/alt-three.js"></script>
+</head>
+<body ng-app="ui-router-named-views">
+
+<div class="container">
+
+  <!-- Header -->
+  <div ui-view="header" class="row"></div>
+
+  <div class="row">
+    <!-- Sidebar/Nav -->
+    <div ui-view="sidebar" class="col-xs-3"></div>
+    <!-- Content -->
+    <div ui-view="content" class="col-xs-9"></div>
+  </div>
+
+  <!-- Footer -->
+  <div ui-view="footer" class="row"></div>
+</div>
+
+
+
+</body>
+</html>
