@@ -18,6 +18,7 @@ namespace Demo2
                 Clients.Caller.playerExists();
                 return true;
             }
+
             player = GameState.Instance.CreatePlayer(userName);
             player.ConnectionId = Context.ConnectionId;
             Clients.Caller.name = player.Name;
@@ -25,6 +26,7 @@ namespace Demo2
             Clients.Caller.id = player.Id;
 
             Clients.Caller.playerJoined(player);
+
             return StartGame(player);
         }
 
@@ -34,10 +36,10 @@ namespace Demo2
             {
                 Player player2;
                 var game = GameState.Instance.FindGame(player, out player2);
-
                 if (game != null)
                 {
                     Clients.Group(player.Group).buildBoard(game);
+                    return true;
                 }
 
                 player2 = GameState.Instance.GetNewOpponent(player);
@@ -70,8 +72,9 @@ namespace Demo2
                     {
                         return true;
                     }
+
                     var card = FindCard(game, cardName);
-                    Clients.Group(player.group).flipCard(card);
+                    Clients.Group(player.Group).flipCard(card);
                     return true;
                 }
             }
@@ -80,7 +83,7 @@ namespace Demo2
 
         private Card FindCard(Game game, string cardName)
         {
-            return game.Board.Pieces.FirstOrDefault(x => x.Name == cardName);
+            return game.Board.Pieces.FirstOrDefault(c => c.Name == cardName);
         }
 
         public bool CheckCard(string cardName)
@@ -94,9 +97,7 @@ namespace Demo2
                 if (game != null)
                 {
                     if (!string.IsNullOrEmpty(game.WhosTurn) && game.WhosTurn != player.Id)
-                    {
                         return true;
-                    }
 
                     Card card = FindCard(game, cardName);
 
@@ -106,6 +107,8 @@ namespace Demo2
                         game.LastCard = card;
                         return true;
                     }
+
+                    //second flip
 
                     bool isMatch = IsMatch(game, card);
                     if (isMatch)
@@ -120,9 +123,12 @@ namespace Demo2
                             GameState.Instance.ResetGame(game);
                             return true;
                         }
+
                         return true;
                     }
+
                     Player opponent = GameState.Instance.GetOpponent(player, game);
+                    //shift to other player
                     game.WhosTurn = opponent.Id;
 
                     Clients.Group(player.Group).resetFlip(game.LastCard, card);
@@ -130,6 +136,7 @@ namespace Demo2
                     return true;
                 }
             }
+
             return false;
         }
 
@@ -142,9 +149,7 @@ namespace Demo2
         private bool IsMatch(Game game, Card card)
         {
             if (card == null)
-            {
                 return false;
-            }
 
             if (game.LastCard != null)
             {
@@ -152,8 +157,10 @@ namespace Demo2
                 {
                     return true;
                 }
+
                 return false;
             }
+
             return false;
         }
     }
