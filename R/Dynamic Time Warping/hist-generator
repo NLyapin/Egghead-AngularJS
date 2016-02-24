@@ -1,0 +1,34 @@
+plot.frequency.spectrum <- function(X.k, xlimits=c(0,length(X.k))) {
+  plot.data  <- cbind(0:(length(X.k)-1), Mod(X.k))
+
+  # TODO: why this scaling is necessary?
+  plot.data[2:length(X.k),2] <- 2*plot.data[2:length(X.k),2]
+
+  plot(plot.data, t="h", lwd=2, main="",
+       xlab="Frequency (Hz)", ylab="Strength",
+       xlim=xlimits, ylim=c(0,max(Mod(plot.data[,2]))))
+}
+
+rows_et <- read.csv("C:/Temp/Обучающая выборка/KVA_27-05-2015_16-56-40_300_46586760440_1000hz_int16_I.row")
+wav_et <- readWave("C:/Temp/Обучающая выборка/KVA_27-05-2015_16-56-40_300_46586760440_1000hz_int16_I.wav")
+d_et <- wav@left[rows[101,]:rows[104,]]
+
+p <- "C:/Temp/Обучающая выборка/";
+files <- list.files(path=p, pattern="*.row", full.names=T, recursive=FALSE)
+lapply(files, function(x) {
+  filename <- strsplit(basename(x), "\\.")[[1]][1]
+  rows <- read.csv(paste(p,filename,".row", sep=""))
+  wav <- readWave(paste(p,filename,".wav", sep=""))
+  if(nrow(rows) > 100)
+  {
+    d1 <- wav@left[rows[101,]:rows[104,]]
+    pngName <- substr(filename, 5, 42)
+    png(filename=paste('c:/Temp/Smokers/', pngName, ".png", sep=""))
+
+    alignment<-dtw(d1,d_et,step=asymmetric)
+    wt<-warp(alignment,index.reference=FALSE);
+    X.k <- fft(d1[wt])
+    plot.frequency.spectrum(X.k, xlimits=c(0,50))
+    dev.off()
+  }
+})
