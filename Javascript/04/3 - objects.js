@@ -24,5 +24,3 @@ Object.defineProperty(urgentTask, 'toString', {
 });
 
 console.log(urgentTask.toString());
-
-
