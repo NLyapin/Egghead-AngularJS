@@ -1,0 +1,29 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/Javascript/Decorator/task-compiled.js" />
+        <item url="file://$PROJECT_DIR$/Javascript/04/taskRepository-compiled.js" />
+        <item url="file://$PROJECT_DIR$/Javascript/Decorator/subObjecting-compiled.js" />
+        <item url="file://$PROJECT_DIR$/Javascript/04/main-compiled.js" />
+        <item url="file://$PROJECT_DIR$/out/out/out/node_modules/babel-preset-es2015/index-compiled.js" />
+        <item url="file://$PROJECT_DIR$/out/out/out/out/out/out/out/out/Javascript/class-compiled.js" />
+        <item url="file://$PROJECT_DIR$/out/out/out/Javascript/class-compiled.js" />
+        <item url="file://$PROJECT_DIR$/Javascript/04/class-compiled.js" />
+        <item url="file://$PROJECT_DIR$/Javascript/04/3 - objects-compiled.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/Javascript/Decorator/task-compiled.js" />
+      <root url="file://$PROJECT_DIR$/Javascript/04/taskRepository-compiled.js" />
+      <root url="file://$PROJECT_DIR$/Javascript/Decorator/subObjecting-compiled.js" />
+      <root url="file://$PROJECT_DIR$/Javascript/04/main-compiled.js" />
+      <root url="file://$PROJECT_DIR$/out/out/out/node_modules/babel-preset-es2015/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/out/out/out/out/out/out/out/out/Javascript/class-compiled.js" />
+      <root url="file://$PROJECT_DIR$/out/out/out/Javascript/class-compiled.js" />
+      <root url="file://$PROJECT_DIR$/Javascript/04/class-compiled.js" />
+      <root url="file://$PROJECT_DIR$/Javascript/04/3 - objects-compiled.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
