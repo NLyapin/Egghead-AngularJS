@@ -47,8 +47,7 @@ var myTask = new Task({
     user: 'Jon',
     completed: false
 });
-//console.log(myTask);
+
 TaskServiceWrapper.completeAndNotify(myTask);
 
 console.log(myTask);
-//
